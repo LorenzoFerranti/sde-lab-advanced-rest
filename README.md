@@ -12,6 +12,8 @@ sde-lab-03/
 ├── docker-compose.yml                backend, MySQL and Redis
 ├── start-lab.sh                      starts Docker and seeds the database (Linux/macOS)
 ├── start-lab.ps1                     same as start-lab.sh, for Windows PowerShell
+├── cleanup-lab.sh                    removes Docker containers and volumes
+├── cleanup-lab.ps1                   same as cleanup-lab.sh, for Windows PowerShell
 └── nest-backend/                     Node.js environment for the lab
     ├── Dockerfile                    
     ├── package.json
@@ -45,6 +47,8 @@ sde-lab-03/
 The database contains only `City`, `Flight` and `Hotel`. Flights and hotels refer to existing cities. **The price of a flight is in EUR** (`priceEur`); **the price of a hotel is in the currency of its city** (`city.currency`: London in GBP, Tokyo in JPY, ...). The weather is cached in Redis for 10 minutes. 
 
 ## Setup
+
+> Note for Windows and macOS users: make sure Docker Desktop is running!
 
 You only need Docker and Docker Compose. Node.js and npm are included in the backend container.
 
@@ -220,3 +224,7 @@ Example for a hotel whose city uses GBP (exchange rate and weather are illustrat
 
 You can check city IDs and currencies with `GET /cities`, or the tables in the web interface. You can test the endpoint by selecting the entry `Assignment: GET /cities/:id/cheapest-hotel-weather`.
 
+
+## Cleanup
+
+Once the lab is over, you can run [`cleanup-lab.sh`](cleanup-lab.sh) (or [`cleanup-lab.ps1`](cleanup-lab.ps1) on Windows) to stop containers, remove them and delete Docker volumes.
