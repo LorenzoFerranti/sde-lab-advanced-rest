@@ -54,10 +54,14 @@ You only need Docker and Docker Compose. Node.js and npm are included in the bac
 
 The `.env` file with the lab credentials is included in the repository. From the project root, start the environment and seed the database:
 
+(Linux)
 ```bash
 ./start-lab.sh
 ```
-
+(Windows)
+```bash
+.\start-lab.ps1
+```
 The script runs these commands, which can also be used separately:
 
 ```bash
